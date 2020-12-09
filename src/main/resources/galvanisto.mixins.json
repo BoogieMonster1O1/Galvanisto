@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.boogiemonster1o1.galvanisto.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "ItemRendererMixin",
+    "ModelLoaderMixin",
+    "BlockModelShapesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "Galvanisto-refmap.json",
+  "mixins": [
+  ]
+}

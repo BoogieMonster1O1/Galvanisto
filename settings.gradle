@@ -20,6 +20,4 @@ pluginManagement {
 	}
 }
 
-include 'Energy'
-
 rootProject.name = 'Galvanisto'

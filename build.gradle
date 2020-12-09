@@ -17,15 +17,20 @@ repositories {
 		name = 'Legacy-Fabric'
 		url = 'https://dl.bintray.com/legacy-fabric/Legacy-Fabric-Maven'
 	}
+	maven {
+		name = 'Jitpack'
+		url = 'https://jitpack.io'
+	}
+	flatDir name: 'flatDirRepo', dirs: 'libs'
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:1.8.9"
 	mappings "net.fabricmc:yarn:1.8.9+build.202011050955:v2"
-
+	implementation "com.google.guava:guava:23.5-jre"
 	modImplementation  "net.fabricmc:fabric-loader-1.8.9:0.9.3+build.202009100647"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:0.10.0"
-	implementation project(":Energy")
+	modImplementation ":energy@jar"
 
 	modApi("net.fabricmc:fabric-language-scala:0.3.2.+") {
 		exclude group: 'net.fabricmc'
