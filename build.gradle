@@ -8,9 +8,9 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-archivesBaseName = project.archives_base_name
-version = project.mod_version
-group = project.maven_group
+archivesBaseName = "Galvanisto"
+version = "0.1.0"
+group = "io.github.boogiemonster1o1"
 
 repositories {
 	maven {
@@ -24,7 +24,8 @@ dependencies {
 	mappings "net.fabricmc:yarn:1.8.9+build.202011050955:v2"
 
 	modImplementation  "net.fabricmc:fabric-loader-1.8.9:0.9.3+build.202009100647"
-	modImplementation "net.fabricmc:fabric-api:0.10.0"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.10.0"
+	implementation project(":Energy")
 
 	modApi("net.fabricmc:fabric-language-scala:0.3.2.+") {
 		exclude group: 'net.fabricmc'
