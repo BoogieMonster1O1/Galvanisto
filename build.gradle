@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
 	id 'scala'
-	id 'fabric-loom' version '0.5-SNAPSHOT'
+	id 'fabric-loom' version 'e3d1762'
 	id 'maven-publish'
 }
 
@@ -12,20 +12,40 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+repositories {
+	maven {
+		name = 'Legacy-Fabric'
+		url = 'https://dl.bintray.com/legacy-fabric/Legacy-Fabric-Maven'
+	}
+}
+
 dependencies {
-	// To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	minecraft "com.mojang:minecraft:1.8.9"
+	mappings "net.fabricmc:yarn:1.8.9+build.202011050955:v2"
 
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-	// You may need to force-disable transitiveness on them.
+	modImplementation  "net.fabricmc:fabric-loader-1.8.9:0.9.3+build.202009100647"
+	modImplementation "net.fabricmc:fabric-api:0.10.0"
 
 	modApi("net.fabricmc:fabric-language-scala:0.3.2.+") {
 		exclude group: 'net.fabricmc'
+	}
+
+	if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+		implementation 'org.lwjgl.lwjgl:lwjgl_util:2.9.4-nightly-20150209'
+		implementation 'org.lwjgl.lwjgl:lwjgl:2.9.4-nightly-20150209'
+		implementation 'org.lwjgl.lwjgl:lwjgl-platform:2.9.4-nightly-20150209'
+	}
+}
+
+if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+	configurations.all {
+		resolutionStrategy {
+			dependencySubstitution {
+				substitute module('org.lwjgl.lwjgl:lwjgl_util:2.9.2-nightly-201408222') with module('org.lwjgl.lwjgl:lwjgl_util:2.9.4-nightly-20150209')
+				substitute module('org.lwjgl.lwjgl:lwjgl:2.9.2-nightly-201408222') with module('org.lwjgl.lwjgl:lwjgl:2.9.4-nightly-20150209')
+			}
+			force 'org.lwjgl.lwjgl:lwjgl-platform:2.9.4-nightly-20150209'
+		}
 	}
 }
 
