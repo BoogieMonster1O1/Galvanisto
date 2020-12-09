@@ -4,12 +4,12 @@
   "package": "io.github.boogiemonster1o1.galvanisto.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "ModelLoaderMixin"
+    "ItemRendererMixin",
+    "ModelLoaderMixin",
+    "BlockRenderManagerAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "refmap": "Galvanisto-refmap.json",
-  "mixins": [
-  ]
+  "refmap": "Galvanisto-refmap.json"
 }

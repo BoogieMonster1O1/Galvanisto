@@ -1,5 +1,6 @@
 package io.github.boogiemonster1o1.galvanisto.block;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.StringIdentifiable;
 
@@ -17,5 +18,13 @@ public enum OreVariant implements StringIdentifiable {
 	@Override
 	public String toString() {
 		return this.asString();
+	}
+
+	public static OreVariant fromItemStack(ItemStack stack) {
+		OreVariant[] values = values();
+		if (values.length <= stack.getMeta()) {
+			return COPPER;
+		}
+		return values[stack.getMeta()];
 	}
 }

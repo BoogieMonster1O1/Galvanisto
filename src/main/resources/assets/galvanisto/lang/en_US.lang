@@ -1,0 +1,7 @@
+# Blocks
+tile.galvanisto:ore.copper_ore.name=Copper Ore
+tile.galvanisto:ore.aluminium_ore.name=Aluminium Ore
+tile.galvanisto:ore.silver_ore.name=Silver Ore
+
+# Itemgroups
+itemGroup.galvanisto.itemGroup=Galvanisto
