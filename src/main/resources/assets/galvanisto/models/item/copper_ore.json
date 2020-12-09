@@ -1,6 +1,6 @@
 {
   "textures": {
-    "all": "galvanisto:block/copper_ore"
+    "all": "galvanisto:blocks/copper_ore"
   },
   "elements": [
     {   "from": [ 0, 0, 0 ],

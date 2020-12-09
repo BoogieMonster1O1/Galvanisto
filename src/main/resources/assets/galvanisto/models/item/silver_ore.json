@@ -1,6 +1,6 @@
 {
   "textures": {
-    "all": "galvanisto:block/silver_ore"
+    "all": "galvanisto:blocks/silver_ore"
   },
   "elements": [
     {   "from": [ 0, 0, 0 ],

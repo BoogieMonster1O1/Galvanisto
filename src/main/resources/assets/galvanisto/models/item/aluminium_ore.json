@@ -1,6 +1,6 @@
 {
   "textures": {
-    "all": "galvanisto:block/aluminium_ore"
+    "all": "galvanisto:blocks/aluminium_ore"
   },
   "elements": [
     {   "from": [ 0, 0, 0 ],
