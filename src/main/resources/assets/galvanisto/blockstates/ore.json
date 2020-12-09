@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "variant=aluminium": {
+      "model": "galvanisto:aluminium_ore"
+    },
+    "variant=copper": {
+      "model": "galvanisto:copper_ore"
+    },
+    "variant=silver": {
+      "model": "galvanisto:silver_ore"
+    }
+  }
+}

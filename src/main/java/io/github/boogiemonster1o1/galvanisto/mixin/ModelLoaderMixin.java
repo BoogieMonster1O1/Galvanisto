@@ -24,6 +24,6 @@ public class ModelLoaderMixin {
 
 	@Inject(method = "method_4483", at = @At("TAIL"))
 	public void registerBlockItemVariantStuff(CallbackInfo ci) {
-		this.field_5373.put(ModItems.oreItem(), Arrays.asList("copper_ore", "silver_ore", "aluminium_ore"));
+		this.field_5373.put(ModItems.oreItem(), Arrays.asList("galvanisto:copper_ore", "galvanisto:silver_ore", "galvanisto:aluminium_ore"));
 	}
 }

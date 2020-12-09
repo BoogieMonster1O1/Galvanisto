@@ -5,8 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "ItemRendererMixin",
-    "ModelLoaderMixin",
-    "BlockModelShapesMixin"
+    "ModelLoaderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

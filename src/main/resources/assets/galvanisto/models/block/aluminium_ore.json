@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "galvanisto:blocks/planks_acacia"
+        "all": "galvanisto:blocks/aluminium_ore"
     }
 }

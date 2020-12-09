@@ -2,31 +2,24 @@ package io.github.boogiemonster1o1.galvanisto.block
 
 import java.util
 
-import net.minecraft.block.{Block, BlockState, Material}
+import net.minecraft.block.{BlockState, Material}
 import net.minecraft.item.{Item, ItemGroup, ItemStack}
-import net.minecraft.state.StateManager
-import net.minecraft.state.property.EnumProperty
 
-object GalvanistoOreBlock extends Block(Material.STONE) {
+object GalvanistoOreBlock extends OreVariantBlock(Material.STONE) {
 	val instance: GalvanistoOreBlock.type = this
-	val variant: EnumProperty[OreVariant] = EnumProperty.of("variant", classOf[OreVariant])
 
 	setItemGroup(ItemGroup.BUILDING_BLOCKS)
 
 	override def getMeta(state: BlockState): Int = {
-		state.get(variant).ordinal()
+		state.get(OreVariant.VARIANT_PROPERTY).ordinal()
 	}
 
 	override def getData(state: BlockState): Int = {
-		state.get(variant).ordinal()
+		state.get(OreVariant.VARIANT_PROPERTY).ordinal()
 	}
 
 	override def stateFromData(data: Int): BlockState = {
-		getDefaultState.`with`(variant, OreVariant.values().apply(data))
-	}
-
-	override def appendProperties(): StateManager = {
-		new StateManager(this, variant)
+		getDefaultState.`with`(OreVariant.VARIANT_PROPERTY, OreVariant.values().apply(data))
 	}
 
 	override def appendItemStacks(item: Item, group: ItemGroup, stacks: util.List[ItemStack]): Unit = {
