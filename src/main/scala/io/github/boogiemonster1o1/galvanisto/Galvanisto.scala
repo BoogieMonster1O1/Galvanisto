@@ -1,5 +1,7 @@
 package io.github.boogiemonster1o1.galvanisto
 
+import io.github.boogiemonster1o1.galvanisto.block.ModBlocks
+import io.github.boogiemonster1o1.galvanisto.item.ModItems
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.fabricmc.loader.api.FabricLoader
@@ -13,5 +15,7 @@ object Galvanisto extends ModInitializer {
 
 	override def onInitialize(): Unit = {
 		println("Loading Galvanisto")
+		ModBlocks.init()
+		ModItems.init()
 	}
 }
