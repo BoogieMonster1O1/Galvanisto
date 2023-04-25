@@ -2,13 +2,14 @@ package io.github.boogiemonster1o1.galvanisto.block
 
 import java.util
 
+import io.github.boogiemonster1o1.galvanisto.Galvanisto
 import net.minecraft.block.{BlockState, Material}
 import net.minecraft.item.{Item, ItemGroup, ItemStack}
 
 object GalvanistoOreBlock extends OreVariantBlock(Material.STONE) {
 	val instance: GalvanistoOreBlock.type = this
 
-	setItemGroup(ItemGroup.BUILDING_BLOCKS)
+	setItemGroup(Galvanisto.itemGroup)
 
 	override def getMeta(state: BlockState): Int = {
 		state.get(OreVariant.VARIANT_PROPERTY).ordinal()
